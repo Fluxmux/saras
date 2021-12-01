@@ -1,29 +1,42 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+import "../styles/stylesheet.css"
 import Seo from "../components/seo"
+import Header from "../components/header"
+import Story from "../components/story"
+import Menu from "../components/menu"
+import Gallery from "../components/gallery"
+import Contact from "../components/contact"
+import Footer from "../components/footer"
+import Map from "../components/map"
+
 
 const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
+  <>
+    <Seo title="Sara's" />
+    <Header/>
+    <div style={{width: "75%", margin: "0 auto"}}>
+      <main>
+        <Story/>
+      </main>
+    </div>
+    <div class="parallax"/>
+    <div style={{width: "75%", margin: "0 auto"}}>
+      <main>
+        <Menu/>
+      </main>
+    </div>
+      <div style={{width: "75%", margin: "0 auto"}}>
+          <Gallery/>
+      </div>
+    <div style={{width: "75%", margin: "0 auto"}}>
+      <main>
+        <Contact/>
+      </main>
+    </div>
+    <Map/>
+    <Footer/>
+  </>
 )
 
 export default IndexPage

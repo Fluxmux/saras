@@ -1,42 +1,19 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import "../styles/stylesheet.css"
+import banner from "../images/banner.jpg"
+import { Link } from "react-scroll";
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+const Header = () => (
+  <>
+    <img id="home" src={banner} alt="sara's" width="100%"/>
+    <header style={{ position: "sticky", top: "0", backgroundColor: "#394d3d"}}>
+      <ul>
+        <li><Link to="home" spy={true} smooth={true} offset={0} duration={1000}>SARA'S</Link></li>
+        <li><Link to="menu" spy={true} smooth={true} offset={-30} duration={1000}>MENU</Link></li>
+        <li><Link to="contact" spy={true} smooth={true} offset={0} duration={1000}>CONTACT</Link></li>
+      </ul>
+    </header>
+  </>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
